@@ -222,6 +222,9 @@ angular.module('ionic-datepicker.provider', [])
       }
 
       $scope.closeIonicDatePickerModal = function () {
+        if(typeof $scope.mainObj.closeCallback === 'function') {
+          $scope.mainObj.closeCallback();
+        }
         closeModal();
       };
 
@@ -284,6 +287,9 @@ angular.module('ionic-datepicker.provider', [])
           text: $scope.mainObj.closeLabel,
           type: 'button_close',
           onTap: function (e) {
+            if(typeof $scope.mainObj.closeCallback === 'function') {
+              $scope.mainObj.closeCallback();
+            }
             // 'ionic-datepicker popup closed.'
           }
         });

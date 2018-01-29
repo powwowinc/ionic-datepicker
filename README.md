@@ -136,6 +136,9 @@ The properties you can configure are as follows.
       callback: function (val) {  //Mandatory
         console.log('Return value from the datepicker popup is : ' + val, new Date(val));
       },
+      closeCallback: function (val) {  // Optional
+        console.log('The datepicker was closed');
+      },
       disabledDates: [            //Optional
         new Date(2016, 2, 16),
         new Date(2015, 3, 16),
@@ -215,6 +218,10 @@ b) For `Today` button the class name is `button_today`
 c) For `Close` button the class name is `button_close`
 
 ##Versions:
+
+### 0) PowWow branch
+
+Added a closeCallback.
 
 ### 1) v0.1.0
 The whole date picker functionality has been implemented, and can be installed with  `bower install ionic-datepicker --save`
