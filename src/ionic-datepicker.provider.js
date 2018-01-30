@@ -214,6 +214,9 @@ angular.module('ionic-datepicker.provider', [])
 
       $scope.closeIonicDatePickerModal = function () {
         closeModal();
+        if(typeof $scope.mainObj.closeCallback == 'function') {
+          $scope.mainObj.closeCallback();
+        }
       };
 
       //Open datepicker popup
